@@ -30,8 +30,3 @@ info:
   name: ${project.name}
   version: ${project.version}
   description: Server Config per microservizi
-
-
-spring:
-  config:
-    import: "configserver:http://localhost:8888"
