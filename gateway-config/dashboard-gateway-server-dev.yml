@@ -1,0 +1,37 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+    register-with-eureka: true
+    fetch-registry: true
+
+management:
+  info:
+    env:
+      enabled: true
+  server:
+    port: 7503
+    base-path: /eus-dashboard-gateway-info
+  endpoints:
+    web:
+      exposure:
+        include:
+          - health
+          - info
+          - metrics
+          - loggers
+          - env
+          - httptrace
+          - threaddump
+          - auditevents
+          - scheduledtasks
+          - shutdown
+info:
+  name: ${project.name}
+  version: ${project.version}
+  description: Server Config per microservizi
+
+
+spring:
+  config:
+    import: "configserver:http://localhost:8888"
